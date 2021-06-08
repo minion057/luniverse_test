@@ -1,0 +1,151 @@
+{
+	"name": "hlfv1",
+	"x-type": "hlfv1",
+	"version": "1.0",
+	"client": {
+		"organization": "org1",
+		"credentialStore": {
+			"path": "/tmp/hfc-kvs",
+			"cryptoStore": {
+				"path": "/tmp/fhc-cvs"
+			},
+			"wallet": "wallet-name"
+		}
+	},
+	"channels": {
+		"channel1": {
+			"orderers": [
+				"orderer1.orderer.internal",
+				"orderer2.orderer.internal",
+				"orderer3.orderer.internal"
+			],
+			"peers": {
+				"peer1.org1.internal": {
+					"endorsingPeer": true,
+					"chaincodeQuery": true,
+					"ledgerQuery": true,
+					"eventSource": true
+				},
+				"peer2.org1.internal": {
+					"endorsingPeer": true,
+					"chaincodeQuery": true,
+					"ledgerQuery": true,
+					"eventSource": true
+				},
+				"peer3.org1.internal": {
+					"endorsingPeer": true,
+					"chaincodeQuery": true,
+					"ledgerQuery": true,
+					"eventSource": true
+				}
+			}
+		}
+	},
+	"organizations": {
+		"org1": {
+			"mspid": "org1MSP",
+			"peers": [
+				"peer1.org1.internal",
+				"peer2.org1.internal",
+				"peer3.org1.internal"
+			]
+		}
+	},
+	"orderers": {
+		"orderer1.orderer.internal": {
+			"url": "grpcs://prd-baas-ElasticL-1RM1KOVMLAA1C-312073223.ap-northeast-2.elb.amazonaws.com:17050",
+			"grpcOptions": {
+				"ssl-target-name-override": "prd-baas-ElasticL-1RM1KOVMLAA1C-312073223.ap-northeast-2.elb.amazonaws.com",
+				"sslProvider": "openSSL",
+				"negotiationType": "TLS",
+				"hostnameOverride": "prd-baas-ElasticL-1RM1KOVMLAA1C-312073223.ap-northeast-2.elb.amazonaws.com",
+				"grpc-max-send-message-length": -1,
+				"grpc.keepalive_time_ms": 360000,
+				"grpc.keepalive_timeout_ms": 180000
+			},
+			"tlsCACerts": {
+				"pem": "-----BEGIN CERTIFICATE-----\nMIICHDCCAcOgAwIBAgIUUSUO0kF3WG2zgawqpBhcSEELlTcwCgYIKoZIzj0EAwIw\nazELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRwwGgYDVQQDExNjYS5vcmRl\ncmVyLmludGVybmFsMB4XDTIxMDYwODExNTIwMFoXDTM2MDYwNDExNTIwMFowazEL\nMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtI\neXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRwwGgYDVQQDExNjYS5vcmRlcmVy\nLmludGVybmFsMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6iFwnXjYE3hsr1Dh\nGp8xGM6NXf1C/zA9j+k3fd5QZcLFntBvSD7WMCBcAKuFR1PJHrUzLfvE17XcPnWE\nVd6eWKNFMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYD\nVR0OBBYEFNu5lJHL+ALKNTpPE0q1yyVYQVGoMAoGCCqGSM49BAMCA0cAMEQCICl8\n3QVD2lxuq/vH9i+W1wJkRz8Ff2fbE5Z6djO95A5nAiAYobiwd5Da0SEU9i1xcWe+\nLXOadwq+F98d/pTv7qyt7Q==\n-----END CERTIFICATE-----\n"
+			}
+		},
+		"orderer2.orderer.internal": {
+			"url": "grpcs://prd-baas-ElasticL-1RM1KOVMLAA1C-312073223.ap-northeast-2.elb.amazonaws.com:17050",
+			"grpcOptions": {
+				"ssl-target-name-override": "prd-baas-ElasticL-1RM1KOVMLAA1C-312073223.ap-northeast-2.elb.amazonaws.com",
+				"sslProvider": "openSSL",
+				"negotiationType": "TLS",
+				"hostnameOverride": "prd-baas-ElasticL-1RM1KOVMLAA1C-312073223.ap-northeast-2.elb.amazonaws.com",
+				"grpc-max-send-message-length": -1,
+				"grpc.keepalive_time_ms": 360000,
+				"grpc.keepalive_timeout_ms": 180000
+			},
+			"tlsCACerts": {
+				"pem": "-----BEGIN CERTIFICATE-----\nMIICHDCCAcOgAwIBAgIUUSUO0kF3WG2zgawqpBhcSEELlTcwCgYIKoZIzj0EAwIw\nazELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRwwGgYDVQQDExNjYS5vcmRl\ncmVyLmludGVybmFsMB4XDTIxMDYwODExNTIwMFoXDTM2MDYwNDExNTIwMFowazEL\nMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtI\neXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRwwGgYDVQQDExNjYS5vcmRlcmVy\nLmludGVybmFsMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6iFwnXjYE3hsr1Dh\nGp8xGM6NXf1C/zA9j+k3fd5QZcLFntBvSD7WMCBcAKuFR1PJHrUzLfvE17XcPnWE\nVd6eWKNFMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYD\nVR0OBBYEFNu5lJHL+ALKNTpPE0q1yyVYQVGoMAoGCCqGSM49BAMCA0cAMEQCICl8\n3QVD2lxuq/vH9i+W1wJkRz8Ff2fbE5Z6djO95A5nAiAYobiwd5Da0SEU9i1xcWe+\nLXOadwq+F98d/pTv7qyt7Q==\n-----END CERTIFICATE-----\n"
+			}
+		},
+		"orderer3.orderer.internal": {
+			"url": "grpcs://prd-baas-ElasticL-1RM1KOVMLAA1C-312073223.ap-northeast-2.elb.amazonaws.com:17050",
+			"grpcOptions": {
+				"ssl-target-name-override": "prd-baas-ElasticL-1RM1KOVMLAA1C-312073223.ap-northeast-2.elb.amazonaws.com",
+				"sslProvider": "openSSL",
+				"negotiationType": "TLS",
+				"hostnameOverride": "prd-baas-ElasticL-1RM1KOVMLAA1C-312073223.ap-northeast-2.elb.amazonaws.com",
+				"grpc-max-send-message-length": -1,
+				"grpc.keepalive_time_ms": 360000,
+				"grpc.keepalive_timeout_ms": 180000
+			},
+			"tlsCACerts": {
+				"pem": "-----BEGIN CERTIFICATE-----\nMIICHDCCAcOgAwIBAgIUUSUO0kF3WG2zgawqpBhcSEELlTcwCgYIKoZIzj0EAwIw\nazELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRwwGgYDVQQDExNjYS5vcmRl\ncmVyLmludGVybmFsMB4XDTIxMDYwODExNTIwMFoXDTM2MDYwNDExNTIwMFowazEL\nMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtI\neXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRwwGgYDVQQDExNjYS5vcmRlcmVy\nLmludGVybmFsMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6iFwnXjYE3hsr1Dh\nGp8xGM6NXf1C/zA9j+k3fd5QZcLFntBvSD7WMCBcAKuFR1PJHrUzLfvE17XcPnWE\nVd6eWKNFMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYD\nVR0OBBYEFNu5lJHL+ALKNTpPE0q1yyVYQVGoMAoGCCqGSM49BAMCA0cAMEQCICl8\n3QVD2lxuq/vH9i+W1wJkRz8Ff2fbE5Z6djO95A5nAiAYobiwd5Da0SEU9i1xcWe+\nLXOadwq+F98d/pTv7qyt7Q==\n-----END CERTIFICATE-----\n"
+			}
+		}
+	},
+	"peers": {
+		"peer1.org1.internal": {
+			"url": "grpcs://3.37.11.164:17060",
+			"grpcOptions": {
+				"ssl-target-name-override": "3.37.11.164",
+				"sslProvider": "openSSL",
+				"negotiationType": "TLS",
+				"hostnameOverride": "3.37.11.164",
+				"grpc-max-send-message-length": -1,
+				"grpc.keepalive_time_ms": 360000,
+				"grpc.keepalive_timeout_ms": 180000,
+				"grpc.http2.keepalive_time": 15
+			},
+			"tlsCACerts": {
+				"pem": "-----BEGIN CERTIFICATE-----\nMIICFzCCAb2gAwIBAgIUT/U7Z7XaNy2EdYbf0SLuNxEb1NgwCgYIKoZIzj0EAwIw\naDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBjYS5vcmcx\nLmludGVybmFsMB4XDTIxMDYwODExNTMwMFoXDTM2MDYwNDExNTMwMFowaDELMAkG\nA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtIeXBl\ncmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBjYS5vcmcxLmludGVy\nbmFsMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3TDVHN8Ue5OdK+ylJG25P66P\n+MRFDR8jyrpWsKjstlfPg4h0KowgrMuOIKqpr7zqBC6dxOyZjSEFpr2AoeErEqNF\nMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYE\nFDgjWfdGyipCbIeFE35zJ/irWMC8MAoGCCqGSM49BAMCA0gAMEUCIQD0mcBQXP6d\nYNVMReMY+CMfxd9DQ0kT2XO9SCZzPYKS6gIgIJncTS6X1sY7UrYywpWNYSIG6Cf+\nrSCOtoJZl9yWdnY=\n-----END CERTIFICATE-----\n"
+			}
+		},
+		"peer2.org1.internal": {
+			"url": "grpcs://52.79.82.21:17060",
+			"grpcOptions": {
+				"ssl-target-name-override": "52.79.82.21",
+				"sslProvider": "openSSL",
+				"negotiationType": "TLS",
+				"hostnameOverride": "52.79.82.21",
+				"grpc-max-send-message-length": -1,
+				"grpc.keepalive_time_ms": 360000,
+				"grpc.keepalive_timeout_ms": 180000,
+				"grpc.http2.keepalive_time": 15
+			},
+			"tlsCACerts": {
+				"pem": "-----BEGIN CERTIFICATE-----\nMIICFzCCAb2gAwIBAgIUT/U7Z7XaNy2EdYbf0SLuNxEb1NgwCgYIKoZIzj0EAwIw\naDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBjYS5vcmcx\nLmludGVybmFsMB4XDTIxMDYwODExNTMwMFoXDTM2MDYwNDExNTMwMFowaDELMAkG\nA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtIeXBl\ncmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBjYS5vcmcxLmludGVy\nbmFsMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3TDVHN8Ue5OdK+ylJG25P66P\n+MRFDR8jyrpWsKjstlfPg4h0KowgrMuOIKqpr7zqBC6dxOyZjSEFpr2AoeErEqNF\nMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYE\nFDgjWfdGyipCbIeFE35zJ/irWMC8MAoGCCqGSM49BAMCA0gAMEUCIQD0mcBQXP6d\nYNVMReMY+CMfxd9DQ0kT2XO9SCZzPYKS6gIgIJncTS6X1sY7UrYywpWNYSIG6Cf+\nrSCOtoJZl9yWdnY=\n-----END CERTIFICATE-----\n"
+			}
+		},
+		"peer3.org1.internal": {
+			"url": "grpcs://3.37.43.152:17060",
+			"grpcOptions": {
+				"ssl-target-name-override": "3.37.43.152",
+				"sslProvider": "openSSL",
+				"negotiationType": "TLS",
+				"hostnameOverride": "3.37.43.152",
+				"grpc-max-send-message-length": -1,
+				"grpc.keepalive_time_ms": 360000,
+				"grpc.keepalive_timeout_ms": 180000,
+				"grpc.http2.keepalive_time": 15
+			},
+			"tlsCACerts": {
+				"pem": "-----BEGIN CERTIFICATE-----\nMIICFzCCAb2gAwIBAgIUT/U7Z7XaNy2EdYbf0SLuNxEb1NgwCgYIKoZIzj0EAwIw\naDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBjYS5vcmcx\nLmludGVybmFsMB4XDTIxMDYwODExNTMwMFoXDTM2MDYwNDExNTMwMFowaDELMAkG\nA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtIeXBl\ncmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBjYS5vcmcxLmludGVy\nbmFsMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3TDVHN8Ue5OdK+ylJG25P66P\n+MRFDR8jyrpWsKjstlfPg4h0KowgrMuOIKqpr7zqBC6dxOyZjSEFpr2AoeErEqNF\nMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYE\nFDgjWfdGyipCbIeFE35zJ/irWMC8MAoGCCqGSM49BAMCA0gAMEUCIQD0mcBQXP6d\nYNVMReMY+CMfxd9DQ0kT2XO9SCZzPYKS6gIgIJncTS6X1sY7UrYywpWNYSIG6Cf+\nrSCOtoJZl9yWdnY=\n-----END CERTIFICATE-----\n"
+			}
+		}
+	}
+}
